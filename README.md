@@ -21,7 +21,7 @@ https://github.com/NextHCI/octopus-releases/releases/latest
 移动端提供 iOS 和 Android 两个入口:
 
 - iOS 入口指向 TestFlight 内测链接: https://testflight.apple.com/join/ac1f6Xks
-- Android 入口指向 `http://ring.shiweinan.com:32850/api/v1/update/redirect`，由服务端重定向到最新 APK 下载地址。
+- Android 入口在新标签页打开 `http://ring.shiweinan.com:32850/api/v1/update/redirect`，由服务端重定向到最新 APK 下载地址。这里使用普通链接导航，不使用 `fetch`，避免触发 CORS。
 
 ## 使用
 
