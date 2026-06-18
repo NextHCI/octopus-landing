@@ -41,7 +41,7 @@ http://127.0.0.1:4175
 
 ## GitHub Pages
 
-本项目已包含 GitHub Actions workflow，push 到 `main` 后会构建并部署 `dist`。
+本项目已包含 GitHub Actions workflow，push 到 `main` 后会构建 `dist`，并发布到 `gh-pages` 分支。
 
 如果仓库是 `NextHCI/octopus-landing`，默认 Pages 地址是:
 
