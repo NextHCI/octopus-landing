@@ -87,9 +87,20 @@ for (const marker of [
   'window.toggleLang',
   'renderEcoTiles',
   'data-count',
-  './assets/icons/'
+  './assets/icons/',
+  'initOctopusDeployPanel',
+  '/api/deploy/github',
+  'octopus-deploy-panel'
 ]) {
   assertIncludes(js, marker, 'src/script.js')
+}
+
+for (const marker of [
+  '.octopus-deploy-panel',
+  '.octopus-deploy-button',
+  '.octopus-deploy-status'
+]) {
+  assertIncludes(css, marker, 'src/styles.css')
 }
 
 for (const legacyMarker of [

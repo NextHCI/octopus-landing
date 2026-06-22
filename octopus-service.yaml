@@ -1,0 +1,7 @@
+uuid: 3a7f7561-0667-4cdb-8a3d-4c8229d977d3
+name: Octopus Landing
+name_zh: 八爪鱼宣传页
+description: Octopus public landing page editor and deployment service.
+type: service
+runtime:
+  mode: subprocess

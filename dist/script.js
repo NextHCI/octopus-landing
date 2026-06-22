@@ -241,4 +241,57 @@
   /* mobile menu (simple scroll) */
   var mb=document.querySelector('.menu-btn');
   if(mb) mb.addEventListener('click', function(){ document.getElementById('download').scrollIntoView({behavior:'smooth'}); });
+
+  function initOctopusDeployPanel(){
+    var svc = window.__OCTOPUS_SERVICE__;
+    if(!svc || !svc.apiBase) return;
+    var apiBase = String(svc.apiBase).replace(/\/$/, '');
+    var panel = document.createElement('div');
+    panel.className = 'octopus-deploy-panel';
+    panel.innerHTML = [
+      '<div class="octopus-deploy-copy">',
+      '<strong>Octopus Landing</strong>',
+      '<span class="octopus-deploy-status">检查部署状态...</span>',
+      '</div>',
+      '<button type="button" class="octopus-deploy-button">部署到 GitHub</button>'
+    ].join('');
+    document.body.appendChild(panel);
+
+    var status = panel.querySelector('.octopus-deploy-status');
+    var button = panel.querySelector('.octopus-deploy-button');
+    function setStatus(text, kind){
+      status.textContent = text;
+      panel.setAttribute('data-state', kind || 'idle');
+    }
+    function setBusy(busy){
+      button.disabled = busy;
+      button.textContent = busy ? '部署中...' : '部署到 GitHub';
+    }
+    fetch(apiBase + '/api/deploy/status')
+      .then(function(resp){ return resp.ok ? resp.json() : Promise.reject(new Error('状态检查失败')); })
+      .then(function(data){
+        if(data.can_deploy) setStatus('已保存，可以部署', 'ready');
+        else if(!data.clean) setStatus('请先保存修改', 'blocked');
+        else if(!data.script_present) setStatus('缺少部署脚本', 'blocked');
+        else setStatus('暂不可部署', 'blocked');
+      })
+      .catch(function(){ setStatus('无法检查状态', 'blocked'); });
+    button.addEventListener('click', function(){
+      setBusy(true);
+      setStatus('正在推送到 GitHub...', 'busy');
+      fetch(apiBase + '/api/deploy/github', {method:'POST'})
+        .then(function(resp){
+          return resp.text().then(function(text){
+            var data = {};
+            try { data = text ? JSON.parse(text) : {}; } catch(e) {}
+            if(!resp.ok) throw new Error(data.detail || text || '部署失败');
+            return data;
+          });
+        })
+        .then(function(){ setStatus('部署已触发', 'ready'); })
+        .catch(function(error){ setStatus(error.message || '部署失败', 'blocked'); })
+        .finally(function(){ setBusy(false); });
+    });
+  }
+  initOctopusDeployPanel();
 })();

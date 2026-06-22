@@ -423,3 +423,30 @@ footer{background:var(--ink);color:#9098B4;padding:62px 0 34px;position:relative
 .eco-head .h2{margin-top:1rem}
 .lang-btn{background:rgba(47,91,255,.08);border:1px solid rgba(47,91,255,.2);cursor:pointer;padding:4px 10px;border-radius:8px;font-family:var(--sans);font-size:var(--fs-callout);font-weight:600;color:var(--cobalt);transition:color .2s,background .2s,border-color .2s}
 .lang-btn:hover{background:rgba(47,91,255,.15);border-color:rgba(47,91,255,.4)}
+
+/* ---------- Octopus service deploy control ---------- */
+.octopus-deploy-panel{
+  position:fixed;right:18px;bottom:18px;z-index:80;
+  display:flex;align-items:center;gap:14px;
+  width:min(420px,calc(100vw - 36px));
+  padding:12px 12px 12px 15px;border-radius:14px;
+  background:rgba(14,20,40,.92);color:#fff;border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 18px 40px rgba(14,20,40,.28);backdrop-filter:blur(16px);
+}
+.octopus-deploy-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
+.octopus-deploy-copy strong{font-size:13px;line-height:1.25;font-weight:700}
+.octopus-deploy-status{font-size:12px;line-height:1.35;color:#b9c2df;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.octopus-deploy-panel[data-state="ready"] .octopus-deploy-status{color:#9ee6b4}
+.octopus-deploy-panel[data-state="blocked"] .octopus-deploy-status{color:#ffb5b5}
+.octopus-deploy-panel[data-state="busy"] .octopus-deploy-status{color:#bfc8ff}
+.octopus-deploy-button{
+  flex:none;height:36px;padding:0 13px;border:0;border-radius:10px;cursor:pointer;
+  background:#fff;color:#12182b;font-size:13px;font-weight:700;font-family:var(--sans);
+  transition:transform .18s ease,opacity .18s ease,background .18s ease;
+}
+.octopus-deploy-button:hover:not(:disabled){transform:translateY(-1px);background:#eef2ff}
+.octopus-deploy-button:disabled{cursor:not-allowed;opacity:.58}
+
+@media (max-width:640px){
+  .octopus-deploy-panel{left:14px;right:14px;bottom:14px;width:auto}
+}
