@@ -3,231 +3,289 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Octopus 八爪鱼 - 更懂你的个人自动化中枢</title>
-    <meta
-      name="description"
-      content="Octopus 八爪鱼连接电脑、手机、消息、文件和本地服务，沉淀长期个人上下文，打造更懂你的自动化中枢。"
-    >
-    <meta name="theme-color" content="#f5f5f7">
-    <link rel="preload" as="image" href="./assets/hero-octopusapp.png">
-    <link rel="icon" href="./assets/octopus-logo.svg">
+    <title>Octopus - 让信息跟上你</title>
+    <meta name="description" content="Octopus 是本地优先、多端协同的个人第二大脑，把微信、飞书、邮件、语音、截图和文档整理成连续上下文。">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preload" as="image" href="./assets/hero-hub.png">
+    <link rel="icon" href="./assets/icons/octopus-logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <header class="site-header" aria-label="主导航">
-      <a class="brand" href="#top" aria-label="Octopus 八爪鱼首页">
-        <img src="./assets/octopus-logo.svg" alt="" width="36" height="36">
-        <span>Octopus 八爪鱼</span>
+<svg class="svg-symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></symbol>
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="currentColor"><path d="M12.1717 12.0005L9.34326 9.17203L10.7575 7.75781L15.0001 12.0005L10.7575 16.2431L9.34326 14.8289L12.1717 12.0005Z"/></symbol>
+  <symbol id="icon-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></symbol>
+  <symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H8l-4 4z"/></symbol>
+  <symbol id="icon-feishu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h12v8H7l-3 3z"/><path d="M9 11h12v8h-4l-3 3v-3"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+  <symbol id="icon-desktop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M9 21h6M12 17v4"/></symbol>
+  <symbol id="icon-screenshot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h4M21 8h-4"/></symbol>
+  <symbol id="icon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="icon-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 16h6"/></symbol>
+  <symbol id="icon-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M12 4v4M9 13h.01M15 13h.01"/></symbol>
+  <symbol id="icon-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M9 11h6M9 15h4"/></symbol>
+  <symbol id="icon-screen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M3 9h4M21 9h-4"/></symbol>
+  <symbol id="icon-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="icon-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M8 11a4 4 0 1 1 8 0c0 2-2 3-2 5h-4c0-2-2-3-2-5z"/></symbol>
+  <symbol id="icon-speak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a3 3 0 0 1 0 6"/></symbol>
+  <symbol id="icon-ocr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9h2M11 9h6M7 13h10"/></symbol>
+  <symbol id="icon-longdoc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 11h8M8 14h6M8 17h4"/></symbol>
+  <symbol id="icon-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="icon-sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-18 0"/><path d="M7 12a5 5 0 0 1 10 0"/><circle cx="12" cy="12" r="1.6"/></symbol>
+  <symbol id="icon-remote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M7 12a5 5 0 0 1 10 0"/><circle cx="12" cy="12" r="1.6"/></symbol>
+  
+</svg>
+
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <div class="brand-group">
+      <a href="#top" class="brand">
+        <span class="octo-mark"></span>
+        <span data-i18n="nav_brand">Octopus</span>
       </a>
-      <nav class="nav-links" aria-label="页面章节">
-        <a href="#core">核心能力</a>
-        <a href="#hwm">更懂你</a>
-        <a href="#services">服务生态</a>
-        <a href="#download">下载</a>
-      </nav>
-    </header>
+      <button class="lang-btn" id="langToggle" type="button" aria-label="切换语言">中</button>
+    </div>
+    <nav class="nav-links">
+      <a href="#capture" data-i18n="nav_capture">超级入口</a>
+      <a href="#smart" data-i18n="nav_smart">个性化</a>
+      <a href="#sync" data-i18n="nav_sync">多端协同</a>
+      <a href="#privacy" data-i18n="nav_privacy">本地存储</a>
+	    </nav>
+    <div class="nav-cta">
+<a href="https://github.com/NextHCI/octopus-releases" target="_blank" rel="noopener" class="btn btn-nav-black" data-i18n="nav_contact">联系我们</a>
+      <a href="#download" class="btn btn-primary" data-magnetic><span class="lbl" data-i18n="nav_download">立即下载</span></a>
+    </div>
+    <button class="menu-btn" aria-label="菜单" data-i18n="nav_menu" data-i18n-attr="aria-label"><span></span></button>
+  </div>
+</header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-content reveal">
-          <p class="eyebrow">更懂你的个人中枢</p>
-          <h1 id="hero-title">Octopus 八爪鱼</h1>
-          <p class="hero-copy">让电脑、手机和常用工具围绕你的习惯协同工作。</p>
-          <div class="hero-actions" aria-label="主要操作">
-            <a class="button button-primary" href="#download">
-              立即下载
-            </a>
-            <a class="button button-secondary" href="#core">
-              看核心能力
-            </a>
-          </div>
-        </div>
-      </section>
+<span id="top"></span>
 
-      <section class="signal-band" aria-label="核心定位">
-        <article class="signal-item reveal">
-          <strong>越用越懂你</strong>
-          <span>沉淀偏好、关系、任务节奏和常用表达，让每次协助更贴近你。</span>
-        </article>
-        <article class="signal-item reveal">
-          <strong>多通道协同</strong>
-          <span>微信、飞书、邮件、桌面、手机和文件信号可以统一汇入。</span>
-        </article>
-        <article class="signal-item reveal">
-          <strong>本地优先</strong>
-          <span>关键数据优先留在本地运行，减少不必要的外传，保护你的隐私。</span>
-        </article>
-      </section>
-
-      <section class="section core-section" id="core" aria-labelledby="core-title">
-        <div class="section-inner core-layout">
-          <div class="core-copy reveal">
-            <h2 id="core-title">把分散的工具，连成一个懂你的系统</h2>
-            <p>
-              Octopus 八爪鱼把消息、语音、文件、屏幕和常用工具整理成连续的个人上下文。
-              你不需要在工具之间来回切换，系统会理解发生了什么，并把下一步动作准备好。
-            </p>
-          </div>
-
-          <div class="core-visual reveal">
-            <img
-              src="./assets/workflow-octopusapp.png"
-              alt="Octopus 八爪鱼连接语音、文件、手机和电脑的工作台视觉"
-              loading="lazy"
-            >
-          </div>
-
-          <div class="capability-bento" aria-label="Octopus 八爪鱼核心能力">
-            <article class="capability capability-large reveal">
-              <span>个人记忆</span>
-              <h3>让系统记住你怎样工作</h3>
-              <p>从记录、任务、对话和桌面行为中提炼长期偏好，让提醒、总结和动作建议更贴近你的真实习惯。</p>
-            </article>
-            <article class="capability capability-glow reveal">
-              <span>全场景输入</span>
-              <h3>把生活和工作信号接进来</h3>
-              <p>手机记录、微信、飞书、邮件、截图、桌面动态和随手记录都能进入个人时间线。</p>
-            </article>
-            <article class="capability reveal">
-              <span>智能处理</span>
-              <h3>把素材变成结果</h3>
-              <p>语音、图片、文档和提醒可以被理解、整理，并在需要时变成可行动的结果。</p>
-            </article>
-            <article class="capability reveal">
-              <span>桌面和手机联动</span>
-              <h3>从提醒到执行更近</h3>
-              <p>通知、录音、快捷动作和桌面动态可以一起进入你的个人工作流。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section hwm-section" id="hwm" aria-labelledby="hwm-title">
-        <div class="section-inner hwm-layout">
-          <div class="hwm-visual reveal">
-            <img
-              src="./assets/hwm-world-model.png"
-              alt="个人记忆将偏好、关系、日程和习惯连接成记忆星图"
-              loading="lazy"
-            >
-          </div>
-          <div class="hwm-copy reveal">
-            <h2 id="hwm-title">越使用，越懂你</h2>
-            <p>
-              它不是一次性聊天记录。Octopus 八爪鱼会围绕你的偏好、关系、项目、设备和时间线沉淀长期上下文，
-              让自动化从“会执行”进化到“知道怎么帮你”。
-            </p>
-            <div class="memory-grid" aria-label="个性化能力">
-              <article>
-                <strong>理解偏好</strong>
-                <span>常用表达、工作习惯、回复口吻和关注重点可以持续沉淀。</span>
-              </article>
-              <article>
-                <strong>保留上下文</strong>
-                <span>同一个人、项目、设备和时间线不再被拆成孤立片段。</span>
-              </article>
-              <article>
-                <strong>支持个性化</strong>
-                <span>提醒、总结、筛选和推荐可以围绕你的真实世界调整。</span>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section services-section" id="services" aria-labelledby="services-title">
-        <div class="section-inner">
-          <div class="services-head reveal">
-            <h2 id="services-title">连接你的常用场景</h2>
-            <p>
-              Octopus 八爪鱼把沟通、记录、文档、提醒和桌面操作自然连在一起。
-            </p>
-          </div>
-
-          <div class="service-cloud reveal" aria-label="可切换服务列表">
-            <button class="service-tab is-active" type="button" data-service-index="0" aria-pressed="true">手机第二大脑</button>
-            <button class="service-tab" type="button" data-service-index="1" aria-pressed="false">微信消息</button>
-            <button class="service-tab" type="button" data-service-index="2" aria-pressed="false">微信自动处理</button>
-            <button class="service-tab" type="button" data-service-index="3" aria-pressed="false">飞书消息</button>
-            <button class="service-tab" type="button" data-service-index="4" aria-pressed="false">邮件收件箱</button>
-            <button class="service-tab" type="button" data-service-index="5" aria-pressed="false">随手记录</button>
-            <button class="service-tab" type="button" data-service-index="6" aria-pressed="false">屏幕内容</button>
-            <button class="service-tab" type="button" data-service-index="7" aria-pressed="false">桌面动态</button>
-            <button class="service-tab" type="button" data-service-index="8" aria-pressed="false">桌面通知</button>
-            <button class="service-tab" type="button" data-service-index="9" aria-pressed="false">灵感记录</button>
-            <button class="service-tab" type="button" data-service-index="10" aria-pressed="false">语音转文字</button>
-            <button class="service-tab" type="button" data-service-index="11" aria-pressed="false">文字朗读</button>
-            <button class="service-tab" type="button" data-service-index="12" aria-pressed="false">图片识字</button>
-            <button class="service-tab" type="button" data-service-index="13" aria-pressed="false">文档整理</button>
-            <button class="service-tab" type="button" data-service-index="14" aria-pressed="false">长文解析</button>
-            <button class="service-tab" type="button" data-service-index="15" aria-pressed="false">日程提醒</button>
-            <button class="service-tab" type="button" data-service-index="16" aria-pressed="false">远程连接</button>
-          </div>
-
-          <div class="service-showcase reveal" aria-live="polite">
-            <div class="service-copy">
-              <span data-service-kicker>手机第二大脑</span>
-              <h3 data-service-title>把手机里的线索带回桌面</h3>
-              <p data-service-desc>记录、通知、录音和即时想法会被整理成可回顾的个人线索。</p>
-            </div>
-            <figure class="service-visual">
-              <div class="service-mockup" data-service-mockup></div>
-              <figcaption class="service-visual-caption">
-                <span data-service-step-a>收集</span>
-                <span data-service-step-b>理解</span>
-                <span data-service-step-c>提醒</span>
-              </figcaption>
-            </figure>
-            <div class="service-progress" aria-hidden="true">
-              <span data-service-progress></span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section download-section" id="download" aria-labelledby="download-title">
-        <div class="section-inner">
-          <div class="download-head reveal">
-            <h2 id="download-title">下载 Octopus 八爪鱼</h2>
-          </div>
-
-          <div class="download-panels" aria-label="下载选项">
-            <section class="download-panel reveal" aria-labelledby="desktop-download-title">
-              <h3 id="desktop-download-title">桌面版</h3>
-              <div class="download-actions">
-                <a class="button button-primary" href="https://github.com/NextHCI/octopus-releases/releases/latest">
-                  下载 Windows
-                </a>
-                <a class="button button-secondary" href="https://github.com/NextHCI/octopus-releases/releases/latest">
-                  下载 macOS
-                </a>
-              </div>
-            </section>
-
-            <section class="download-panel reveal" aria-labelledby="mobile-download-title">
-              <h3 id="mobile-download-title">移动端</h3>
-              <div class="download-actions">
-                <a class="button button-primary" href="https://testflight.apple.com/join/ac1f6Xks">
-                  加入 iOS 内测
-                </a>
-                <a class="button button-secondary" href="http://ring.shiweinan.com:32850/api/v1/update/redirect">
-                  下载安卓 APK
-                </a>
-              </div>
-            </section>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div>
-        <strong>Octopus 八爪鱼</strong>
-        <span>更懂你的个人自动化中枢。</span>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <h1 data-reveal data-delay="1"><span data-i18n="hero_title_a">让信息</span> <span class="grad-text" data-i18n="hero_title_b">跟上你</span></h1>
+      <p class="lead" data-reveal data-delay="2" data-i18n="hero_lead">微信、飞书、邮件、语音、截图、文档，随手丢进去<br>Octopus 替你<strong>记好、连好、找好</strong></p>
+      <p class="tagline" data-reveal data-delay="2" data-i18n="hero_tagline">跨设备 · 越用越准 · 隐私敢记</p>
+      <div class="hero-actions" data-reveal data-delay="3">
+        <a href="#download" class="btn btn-primary btn-lg"><span class="lbl" data-i18n="hero_cta_primary">立即下载
+          <svg viewBox="0 0 24 24"><use href="#icon-download"/></svg>
+        </span></a>
+        <a href="#capture" class="btn btn-ghost btn-lg"><span class="lbl" data-i18n="hero_cta_secondary">快速接入指南
+          <svg viewBox="0 0 24 24" width="22" height="22"><use href="#icon-arrow-right"/></svg>
+        </span></a>
       </div>
-      <a href="https://github.com/NextHCI/octopus-releases/releases/latest">打开下载页</a>
-    </footer>
+      <div class="hero-note" data-reveal data-delay="4"></div>
+    </div>
 
+    <div class="hub-stage">
+      <div class="hub-ring-b"></div>
+      <div class="hub">
+        <img src="./assets/hero-hub.png" alt="Octopus">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECS ============ -->
+<section class="specs">
+  <div class="wrap specs-grid">
+    <div class="spec" data-reveal><div class="num"><span data-count="16">0</span><span data-i18n="spec_1_suffix">+</span></div><div class="lbl" data-i18n="spec_1_lbl">服务来源</div></div>
+    <div class="spec" data-reveal data-delay="1"><div class="num"><span data-count="3">0</span><span data-i18n="spec_2_suffix"> 端同步</span></div><div class="lbl" data-i18n="spec_2_lbl">手机、电脑、网页</div></div>
+    <div class="spec" data-reveal data-delay="2"><div class="num" data-i18n="spec_3_num">本地</div><div class="lbl" data-i18n="spec_3_lbl">数据优先保留在本地</div></div>
+    <div class="spec" data-reveal data-delay="3"><div class="num" data-i18n="spec_4_num">开箱即用</div><div class="lbl" data-i18n="spec_4_lbl">零注册门槛，越用越懂你</div></div>
+  </div>
+</section>
+
+<!-- ============ PAIN ============ -->
+<section class="pain">
+  <div class="wrap pain-inner">
+    <h2 data-reveal data-delay="1"><span data-i18n="pain_title_a">想法来时无处可去</span><br><span class="soft" data-i18n="pain_title_b">需要时又无处可寻</span></h2>
+    <p data-reveal data-delay="2" data-i18n="pain_lead">每次查找都需要翻遍不同应用？记录、整理、找回，现在它们是一件事</p>
+  </div>
+</section>
+
+<!-- ============ FEATURE 1 : 汇入 ============ -->
+<section class="feature" id="capture">
+  <div class="wrap feature-inner">
+    <div class="feature-copy">
+      <span class="eyebrow" data-reveal data-i18n="f1_eyebrow">AI时代的超级入口</span>
+      <h2 data-reveal data-delay="1" data-i18n="f1_title">抬手就能说，抬手就能记</h2>
+      <p class="lead" data-reveal data-delay="2" data-i18n="f1_lead">不限格式，不用切换。微信里敲定的方案、随手拍的白板、一段语音、一份文档，丢进来，Octopus 都能收</p>
+      <ul class="f-list" data-reveal data-delay="3">
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f1_list_1"><b>多通道接入</b>　微信 / 飞书 / 邮件 / 网页 / 语音 / 本地文档</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f1_list_2"><b>自动处理</b>　语音转文字、图片识字、文档整理、长文解析</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f1_list_3"><b>个性化整理</b>　丢进去,剩下的交给它</span></li>
+      </ul>
+      </div>
+      <div class="feature-visual" data-reveal data-delay="2">
+        <div class="viz-shadow">
+          <img src="./assets/capture-preview.svg" alt="汇入界面预览" class="capture-preview" data-i18n="f1_alt" data-i18n-attr="alt">
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE 2 : 懂你 ============ -->
+<section class="feature alt reverse" id="smart">
+  <div class="wrap feature-inner">
+    <div class="feature-copy">
+      <span class="eyebrow" data-reveal data-i18n="f2_eyebrow">个性化</span>
+      <h2 data-reveal data-delay="1" data-i18n="f2_title">越用越懂你</h2>
+      <p class="lead" data-reveal data-delay="2" data-i18n="f2_lead">不依赖关键词检索，直接映射信息间的关联：持续学习你的行为模式与表达习惯，在你需要时，随时推荐</p>
+      <ul class="f-list" data-reveal data-delay="3">
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f2_list_1"><b>关联记忆</b>　新记录自动牵出相关笔记</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f2_list_2"><b>理解偏好</b>　表达、关注重点持续沉淀</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f2_list_3"><b>主动递送</b>　在你需要前，把材料准备好</span></li>
+      </ul>
+    </div>
+    <div class="feature-visual" data-reveal data-delay="2">
+      <div class="viz" data-tilt>
+        <div class="graph">
+          <svg viewBox="0 0 400 280">
+            <g stroke="#2F5BFF" stroke-width="1.6" fill="none" stroke-opacity=".4" stroke-dasharray="4 6" class="flow">
+              <path d="M200 140 C150 90 110 70 90 56"/>
+              <path d="M200 140 C150 190 110 210 84 224"/>
+              <path d="M200 140 C280 130 320 120 336 112"/>
+            </g>
+          </svg>
+          <div class="node main node-center" data-i18n="f2_graph_main">新的会议记录</div>
+          <div class="node small node-project"><span data-i18n="f2_graph_title_1">项目 A 排期</span><div class="sub" data-i18n="f2_graph_sub_1">3 天前</div></div>
+          <div class="node small node-contact"><span data-i18n="f2_graph_title_2">和 老师 的沟通</span><div class="sub" data-i18n="f2_graph_sub_2">上周</div></div>
+          <div class="node small node-draft"><span data-i18n="f2_graph_title_3">方案 v2 草稿</span><div class="sub" data-i18n="f2_graph_sub_3">2 周前</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE 3 : 同步 ============ -->
+<section class="feature" id="sync">
+  <div class="wrap feature-inner">
+    <div class="feature-copy">
+      <span class="eyebrow" data-reveal data-i18n="f3_eyebrow">多端协同</span>
+      <h2 data-reveal data-delay="1" data-i18n="f3_title">手机命令，电脑执行</h2>
+      <p class="lead" data-reveal data-delay="2" data-i18n="f3_lead">从手机到电脑，从路上到桌前，不挑屏幕，不分设备，动动手指，电脑替你干活。手机记的，电脑无缝继续用</p>
+      <ul class="f-list" data-reveal data-delay="3">
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f3_list_1"><b>三端共用上下文</b>　手机、电脑、网页，同一个上下文</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f3_list_2"><b>无缝接力</b>　在哪台设备想到，就在哪台记录</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f3_list_3"><b>手机PC联动</b>　远程登录，随时 vibe working</span></li>
+      </ul>
+    </div>
+    <div class="feature-visual feature-visual-end" data-reveal data-delay="2">
+      <img src="./assets/sync-preview.png" alt="多端协同预览" class="sync-preview" data-i18n="f3_alt" data-i18n-attr="alt">
+    </div>
+    </div>
+  </section>
+
+<!-- ============ FEATURE 4 : 隐私 ============ -->
+<section class="feature alt reverse" id="privacy">
+  <div class="wrap feature-inner">
+    <div class="feature-copy">
+      <span class="eyebrow" data-reveal data-i18n="f4_eyebrow">隐私保护</span>
+      <h2 data-reveal data-delay="1" data-i18n="f4_title">本地优先，数据只留在你手里</h2>
+      <p class="lead" data-reveal data-delay="2" data-i18n="f4_lead">东西默认都存在你自己的设备上,只有你允许的内容才会同步。没有"上传"这个默认动作,就没有意外的泄露。</p>
+      <ul class="f-list" data-reveal data-delay="3">
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f4_list_1"><b>本地优先</b>　关键数据默认留在本地运行</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f4_list_2"><b>你说了算</b>　只有授权的内容才会同步</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><use href="#icon-tick"/></svg></span><span data-i18n="f4_list_3"><b>没有默认上传</b>　从源头杜绝意外外传</span></li>
+      </ul>
+    </div>
+    <div class="feature-visual" data-reveal data-delay="2">
+      <div class="viz-shadow privacy-shadow">
+        <img src="./assets/privacy-security.png" alt="隐私安全" class="privacy-preview" data-i18n="f4_alt" data-i18n-attr="alt">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECOSYSTEM ============ -->
+<section class="eco" id="ecosystem">
+  <div class="wrap">
+    <div class="eco-head">
+      <h2 class="h2" data-reveal data-delay="1" data-i18n="eco_title">把分散的工具，变成懂你的系统</h2>
+      <p class="lead" data-reveal data-delay="2" data-i18n="eco_lead">Octopus 把消息、语音、文件、屏幕和常用工具整理成连续的个人上下文，并支持在此基础上开发定制各种工具、生态</p>
+    </div>
+    <div class="eco-grid">
+      <!-- tiles injected to keep markup short -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD ============ -->
+<section class="cta" id="download">
+  <div class="cta-glow"></div>
+  <div class="wrap cta-inner">
+    <span class="octo-mark" data-reveal></span>
+    <h2 data-reveal data-delay="1" data-i18n="cta_title">随手记，随时找</h2>
+    <p data-reveal data-delay="2" data-i18n="cta_lead">让信息跟上你，而不是去找它</p>
+
+    <div class="dl-group" data-reveal data-delay="3">
+      <div class="dl-label" data-i18n="dl_desktop_label">桌面版</div>
+      <div class="dl-row">
+        <a href="https://github.com/NextHCI/octopus-releases/releases/latest" target="_blank" rel="noopener" class="btn btn-light btn-lg" data-magnetic><span class="lbl">
+          <img src="./assets/icons/windows.svg" alt="" class="btn-icon"><span data-i18n="dl_windows">下载 Windows</span></span></a>
+        <a href="https://github.com/NextHCI/octopus-releases/releases/latest" target="_blank" rel="noopener" class="btn btn-dark btn-lg" data-magnetic><span class="lbl">
+          <img src="./assets/icons/apple.svg" alt="" class="btn-icon"><span data-i18n="dl_macos">下载 macOS</span></span></a>
+      </div>
+
+      <div class="dl-label" data-i18n="dl_mobile_label">移动端</div>
+      <div class="dl-row">
+        <a href="https://testflight.apple.com/join/ac1f6Xks" target="_blank" rel="noopener" class="btn btn-dark btn-lg" data-magnetic><span class="lbl">
+          <img src="./assets/icons/apple.svg" alt="" class="btn-icon"><span data-i18n="dl_ios">加入 iOS 内测</span></span></a>
+        <a href="https://octopus.shiweinan.com/apk/octopus_release.apk" target="_blank" rel="noopener" class="btn btn-dark btn-lg" data-magnetic><span class="lbl">
+          <img src="./assets/icons/android.svg" alt="" class="btn-icon"><span data-i18n="dl_android">下载安卓 APK</span></span></a>
+      </div>
+    </div>
+    <div class="cta-note" data-reveal data-delay="4"></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="b"><span class="octo-mark"></span>Octopus</div>
+        <p><span data-i18n="footer_tagline">更懂你的第二大脑：本地优先、多端协同,让信息跟上你,而不是去找它</span></p>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="footer_col1_title">能力</h4>
+        <a href="#capture" data-i18n="nav_capture">超级入口</a>
+        <a href="#smart" data-i18n="nav_smart">个性化</a>
+        <a href="#sync" data-i18n="nav_sync">多端协同</a>
+        <a href="#privacy" data-i18n="nav_privacy">本地存储</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="footer_col2_title">下载</h4>
+        <a href="https://github.com/NextHCI/octopus-releases/releases/latest" target="_blank" rel="noopener">Windows</a>
+        <a href="https://github.com/NextHCI/octopus-releases/releases/latest" target="_blank" rel="noopener">macOS</a>
+        <a href="https://testflight.apple.com/join/ac1f6Xks" target="_blank" rel="noopener" data-i18n="footer_ios">iOS 内测</a>
+        <a href="https://octopus.shiweinan.com/apk/octopus_release.apk" target="_blank" rel="noopener" data-i18n="footer_android">安卓 APK</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="footer_col3_title">关于</h4>
+        <a href="#top" data-i18n="footer_top">回到顶部</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="cp" data-i18n="footer_copyright">© 2026 Octopus · NextHCI　保留所有权利</span>
+      <span class="social">
+        <span class="social-link" aria-label="微博" data-i18n="footer_weibo" data-i18n-attr="aria-label"><img src="./assets/icons/weibo-fill 1.svg" alt="微博" data-i18n="footer_weibo_alt" data-i18n-attr="alt"></span>
+        <a href="https://github.com/NextHCI/octopus-releases" target="_blank" rel="noopener" class="social-link" aria-label="GitHub" data-i18n="footer_github" data-i18n-attr="aria-label"><img src="./assets/icons/github-fill 1.svg" alt="GitHub" data-i18n="footer_github_alt" data-i18n-attr="alt"></a>
+        <span class="social-link" aria-label="微信" data-i18n="footer_wechat" data-i18n-attr="aria-label"><img src="./assets/icons/wechat-fill 1.svg" alt="微信" data-i18n="footer_wechat_alt" data-i18n-attr="alt"></span>
+      </span>
+    </div>
+  </div>
+</footer>
     <script src="./script.js" defer></script>
   </body>
 </html>
